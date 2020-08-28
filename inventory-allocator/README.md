@@ -1,3 +1,22 @@
+## How to run the tests
+```
+$ cd path/to/src
+$ python test_InventoryAllocator.py
+```
+
+## What is my approach?
+The challange specifies that shipping from one warehouse is cheaper than shipping from multiple. Therefore, we should scan each warehouse to see if they are capable of filling the order completely, and if not, break up the order prioritizing cheaper warehouses. 
+
+#### How would we do that?
+We will have to scan through the entire list of warehouses. As we scan along, add ordered items to the "cart". If there is a warehouse that can fill the entire order all at once, we fill the order and we are done. Else, we check if the "cart" can fill the order, and then we are done. 
+
+My original appreach to this problem involved scanning the warehouses to see if there is one to completely fill the order, and if not, scan the warehouses again, splitting the order. This approach iterates over the warehouses twice. 
+
+After some thought, I traded run time for space. Using an additional dict/map, we scan through the warehouses ONCE, splitting up the order from the start. Even after the order is filled, we continue scanning the rest of the warehouses to see if one can fill the order completely. 
+
+
+
+
 
 
 ## Problem
