@@ -1,6 +1,6 @@
 import unittest
 
-from src import InventoryAllocator
+import InventoryAllocator
 
 
 class TestInventoryAllocator(unittest.TestCase):
